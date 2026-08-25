@@ -1,1 +1,27 @@
+# Define a variable
+number = -5
 
+# Conditional statements
+if number > 0:
+    print(f"The number {number} is positive.")
+elif number < 0:
+    print(f"The number {number} is negative.")
+else:
+    print(f"The number {number} is zero.")
+
+# You can change the 'number' variable to test different cases.
+number = 10
+if number > 0:
+    print(f"The number {number} is positive.")
+elif number < 0:
+    print(f"The number {number} is negative.")
+else:
+    print(f"The number {number} is zero.")
+
+number = 0
+if number > 0:
+    print(f"The number {number} is positive.")
+elif number < 0:
+    print(f"The number {number} is negative.")
+else:
+    print(f"The number {number} is zero.")
