@@ -1,0 +1,28 @@
+import inspect
+
+# 1. Listing Python's built-in functions
+print("--- Built-in Functions ---")
+# Use dir(__builtins__) to get all built-in names
+# Then filter for callables that are actual functions (not types or other objects)
+built_in_functions = [name for name in dir(__builtins__) if inspect.isfunction(getattr(__builtins__, name, None))]
+
+print(f"Total built-in functions: {len(built_in_functions)}")
+print("Some examples:")
+for func_name in sorted(built_in_functions)[:10]: # Displaying first 10 for brevity
+    print(f"- {func_name}")
+
+
+# 2. Listing methods of a string object
+print("\n--- Methods of a String Object ---")
+sample_string = "hello world"
+
+# Use dir() to get all attributes and methods of an object
+string_attributes = dir(sample_string)
+
+# Filter for methods (callable attributes that don't start with '__')
+string_methods = [attr for attr in string_attributes if callable(getattr(sample_string, attr)) and not attr.startswith('__')]
+
+print(f"String object methods: {len(string_methods)}")
+print("Some examples:")
+for method_name in sorted(string_methods)[:10]: # Displaying first 10 for brevity
+    print(f"- {method_name}")
