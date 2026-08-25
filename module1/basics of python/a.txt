@@ -1,27 +1,22 @@
-# Define a variable
-number = -5
+print("--- Simple Interactive Application ---")
+print("Enter a number to check if it's positive, negative, or zero. Type 'quit' to exit.")
 
-# Conditional statements
-if number > 0:
-    print(f"The number {number} is positive.")
-elif number < 0:
-    print(f"The number {number} is negative.")
-else:
-    print(f"The number {number} is zero.")
+while True:
+    user_input = input("Enter a number or 'quit': ")
 
-# You can change the 'number' variable to test different cases.
-number = 10
-if number > 0:
-    print(f"The number {number} is positive.")
-elif number < 0:
-    print(f"The number {number} is negative.")
-else:
-    print(f"The number {number} is zero.")
+    if user_input.lower() == 'quit':
+        print("Exiting application. Goodbye!")
+        break
+    else:
+        try:
+            number = float(user_input) # Use float to handle decimals
+            if number > 0:
+                print(f"The number {number} is positive.")
+            elif number < 0:
+                print(f"The number {number} is negative.")
+            else:
+                print(f"The number {number} is zero.")
+        except ValueError:
+            print(f"Invalid input: '{user_input}'. Please enter a valid number or 'quit'.")
 
-number = 0
-if number > 0:
-    print(f"The number {number} is positive.")
-elif number < 0:
-    print(f"The number {number} is negative.")
-else:
-    print(f"The number {number} is zero.")
+print("--- Application Finished ---")
